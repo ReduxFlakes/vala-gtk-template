@@ -1,0 +1,33 @@
+{
+  "id": "com.example.myapp",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "51",
+  "sdk": "org.gnome.Sdk",
+  "command": "myapp",
+  "finish-args": [
+    "--share=ipc",
+    "--socket=wayland",
+    "--socket=fallback-x11",
+    "--device=dri"
+  ],
+  "cleanup": ["/include", "/lib/pkgconfig", "/share/man", "/share/doc",
+              "/share/pkgconfig", "*.la", "*.a"],
+  "modules": [
+    {
+      "name": "blueprint-compiler",
+      "buildsystem": "meson",
+      "cleanup": ["*"],
+      "sources": [{ "type": "git",
+                    "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
+                    "tag": "v0.20.4", "commit": "31b62c24a72c1670d2d93dcdf2d130f1ae12778e" }]
+    },
+    {
+      "name": "myapp",
+      "buildsystem": "meson",
+      "builddir": true,
+      "config-opts": ["--libdir=lib"],
+      "sources": [{ "type": "dir", "path": ".",
+                    "skip": ["build", "build-flatpak", ".flatpak-builder", ".git", ".vscode"] }]
+    }
+  ]
+}

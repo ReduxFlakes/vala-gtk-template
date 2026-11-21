@@ -1,0 +1,5 @@
+.vscode
+build/
+.flatpak/
+.flatpak-builder/
+build-flatpak/

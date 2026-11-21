@@ -1,0 +1,31 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $MyAppWindow: Adw.ApplicationWindow {
+  title: _("My App");
+  default-width: 980;
+  default-height: 640;
+
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [end]
+      Gtk.MenuButton {
+        primary: true;
+        icon-name: "open-menu-symbolic";
+        tooltip-text: _("Main Menu");
+      }
+    }
+
+    Gtk.Label mylabel {
+      valign: center;
+      halign: center;
+
+      styles [
+        "title-1",
+      ]
+
+      label: _("Vala + GTK");
+    }
+  }
+}

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=My App
+Comment=A simple Vala + GTK application
+Exec=myapp
+Icon=com.example.myapp
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Utility;
+StartupNotify=true
