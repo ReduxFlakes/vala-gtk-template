@@ -76,7 +76,7 @@ Install the SDKs:
 flatpak install flathub org.gnome.Platform//51 org.gnome.Sdk//51
 ```
 
-You can then run the install command, this is similar to the meson compile command but it also install the application as a flatpak
+You can then run the install command, this is similar to the meson compile command but it also install the application as a Flatpak package on the system, the `--force-clean` flag will reinstall the pacakge if it's already installed, this makes it easier to test any new modification since it will remove the previous version.
 
 ```bash
 flatpak-builder --user --install --force-clean build-flatpak com.example.myapp.json
@@ -92,7 +92,7 @@ flatpak run com.example.myapp
 ```
 
 > [!NOTE]
-> `com.example.myapp` is the id value inside the manifest file, if you changed the id in the manifest file you should run the app with the new value.
+> `com.example.myapp` is the value in the `id` field of the manifest file, if you changed this value you should also change it in the run command.
 
 
 ## Resources
